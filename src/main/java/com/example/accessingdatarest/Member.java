@@ -18,7 +18,7 @@ import java.time.LocalDate;
         private String address;
         private String email;
         private String phone;
-        private LocalDate memberStart;
+        private LocalDate memberStartDate;
         // membership duration calculated from start date
         private String memberType;
 
@@ -70,12 +70,12 @@ import java.time.LocalDate;
         this.phone = phone;
     }
 
-    public LocalDate getMemberStart() {
-        return memberStart;
+    public LocalDate getMemberStartDate() {
+        return memberStartDate;
     }
 
-    public void setMemberStart(LocalDate memberStart) {
-        this.memberStart = memberStart;
+    public void setMemberStartDate(LocalDate memberStartDate) {
+        this.memberStartDate = memberStartDate;
     }
 
     public String getMemberType() {
