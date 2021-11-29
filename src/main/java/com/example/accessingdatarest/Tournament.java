@@ -1,9 +1,6 @@
 package com.example.accessingdatarest;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import java.time.LocalDate;
 
@@ -18,6 +15,14 @@ import java.time.LocalDate;
         private String location;
         private int fee;
         private int prize;
+
+        @OneToOne
+        private Person firstPlace;
+        @OneToOne
+        private Person secondPlace;
+        @OneToOne
+        private Person thirdPlace;
+
 
     public long getId() {
         return id;
@@ -73,5 +78,29 @@ import java.time.LocalDate;
 
     public void setPrize(int prize) {
         this.prize = prize;
+    }
+
+    public Person getFirstPlace() {
+        return firstPlace;
+    }
+
+    public void setFirstPlace(Person firstPlace) {
+        this.firstPlace = firstPlace;
+    }
+
+    public Person getSecondPlace() {
+        return secondPlace;
+    }
+
+    public void setSecondPlace(Person secondPlace) {
+        this.secondPlace = secondPlace;
+    }
+
+    public Person getThirdPlace() {
+        return thirdPlace;
+    }
+
+    public void setThirdPlace(Person thirdPlace) {
+        this.thirdPlace = thirdPlace;
     }
 }

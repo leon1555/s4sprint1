@@ -1,7 +1,6 @@
 package com.example.accessingdatarest;
 
 import javax.persistence.*;
-import java.time.Duration;
 import java.time.LocalDate;
 
 
@@ -19,12 +18,13 @@ import java.time.LocalDate;
         private String email;
         private String phone;
         private LocalDate memberStartDate;
-//        private double memberDurationDays;
+        // To record the duration of the membership, I wanted to set up a trigger in the MySQL database, but I ran
+        // out of time. (Haven't had much practice with triggers.)
 
         @OneToOne
         private MembershipType membershipType;
 
-    public long getId() {
+        public long getId() {
             return id;
         }
 
@@ -48,50 +48,43 @@ import java.time.LocalDate;
             this.lastName = lastName;
         }
 
-    public String getAddress() {
+        public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+        public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getEmail() {
+        public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+        public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhone() {
+        public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+        public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public LocalDate getMemberStartDate() {
+        public LocalDate getMemberStartDate() {
         return memberStartDate;
     }
 
-    public void setMemberStartDate(LocalDate memberStartDate) {
+        public void setMemberStartDate(LocalDate memberStartDate) {
         this.memberStartDate = memberStartDate;
     }
 
-//    public double getMemberDurationDays() {
-//            LocalDate now = LocalDate.now();
-//            Duration duration = Duration.between(now, memberStartDate);
-//            double diffHours = Math.abs(duration.toHours());
-//            double diffDays = diffHours / 24;
-//            return diffDays;
-//    }
-    public MembershipType getMembershipType() {
+        public MembershipType getMembershipType() {
         return membershipType;
     }
 
-    public void setMembershipType(MembershipType membershipType) {
+        public void setMembershipType(MembershipType membershipType) {
         this.membershipType = membershipType;
     }
 

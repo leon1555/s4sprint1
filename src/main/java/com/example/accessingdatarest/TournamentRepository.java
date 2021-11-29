@@ -16,4 +16,11 @@ public interface TournamentRepository extends PagingAndSortingRepository<Tournam
     List<Tournament> findByLocation(@Param("location") String location);
     List<Tournament> findByFee(@Param("fee") int fee);
     List<Tournament> findByPrize(@Param("prize") int prize);
+
+    // Still not sure exactly how to make this bridge between tournament and member work.
+    // That the columns are called "first_place," "second_place," etc. instead of "member"
+    // makes it a little more complicated than the example with Person and Car we did in class.
+//    List<Tournament> findTournamentByMemberId(@Param("id") long id);
+//    List<Tournament> findBySecondPlace(@Param("secondPlace") long id);
+//    List<Tournament> findByThirdPlace(@Param("thirdPlace") long id);
 }
