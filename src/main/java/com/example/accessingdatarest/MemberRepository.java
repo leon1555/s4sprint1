@@ -16,5 +16,6 @@ public interface MemberRepository extends PagingAndSortingRepository<Member, Lon
     List<Member> findByEmail(@Param("email") String email);
     List<Member> findByPhone(@Param("phone") String phone);
     List<Member> findByMemberStartDate(@Param("memberStartDate") LocalDate memberStart);
-    List<Member> findByMemberType(@Param("memberType") String memberType);
+    List<Member> findMemberByMembershipTypeId(@Param("id") long id);
+    List<Member> findMemberByMembershipTypeMembershipType(@Param("membershipType") String membershipType);
 }

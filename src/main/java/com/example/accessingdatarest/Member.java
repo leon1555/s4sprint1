@@ -1,10 +1,10 @@
 package com.example.accessingdatarest;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.Duration;
 import java.time.LocalDate;
+
+
 
 @Entity
     public class Member {
@@ -19,10 +19,12 @@ import java.time.LocalDate;
         private String email;
         private String phone;
         private LocalDate memberStartDate;
-        // membership duration calculated from start date
-        private String memberType;
+//        private double memberDurationDays;
 
-        public long getId() {
+        @OneToOne
+        private MembershipType membershipType;
+
+    public long getId() {
             return id;
         }
 
@@ -78,12 +80,20 @@ import java.time.LocalDate;
         this.memberStartDate = memberStartDate;
     }
 
-    public String getMemberType() {
-        return memberType;
+//    public double getMemberDurationDays() {
+//            LocalDate now = LocalDate.now();
+//            Duration duration = Duration.between(now, memberStartDate);
+//            double diffHours = Math.abs(duration.toHours());
+//            double diffDays = diffHours / 24;
+//            return diffDays;
+//    }
+    public MembershipType getMembershipType() {
+        return membershipType;
     }
 
-    public void setMemberType(String memberType) {
-        this.memberType = memberType;
+    public void setMembershipType(MembershipType membershipType) {
+        this.membershipType = membershipType;
     }
+
 }
 
